@@ -64,8 +64,16 @@ class Board
   end
 
   def one_side_empty?
+    if @cups[0..5].all? { |cup| cup.empty? } || @cups[7..13].all? { |cup| cup.empty? }
+      return true
+    end
+    false
   end
 
   def winner
+    count_for_p1 = @cups[6].count
+    count_for_p2 = @cups[13].count
+
+    count_for_p1 == count_for_p2 ? :draw : count_for_p1 > count_for_p2 ? @name1 : @name2
   end
 end
