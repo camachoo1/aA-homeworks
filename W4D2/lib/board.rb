@@ -11,9 +11,7 @@ class Board
   def place_stones
     # helper method to #initialize every non-store cup with four stones each
     @cups.each_with_index do |cup, i|
-      unless i == 6 || i == 13
-        4.times { cup << :stone }
-      end
+      (0..3).each { cup << :stone } unless i == 6 || i == 13
     end
   end
 
@@ -64,9 +62,7 @@ class Board
   end
 
   def one_side_empty?
-    if @cups[0..5].all? { |cup| cup.empty? } || @cups[7..13].all? { |cup| cup.empty? }
-      return true
-    end
+    return true if @cups[0..5].all? { |cup| cup.empty? } || @cups[7..13].all? { |cup| cup.empty? }
     false
   end
 
