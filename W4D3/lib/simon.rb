@@ -32,16 +32,16 @@ class Simon
     @seq.each { |color| p color }
   end
 
-    def require_sequence
-      puts "Repeat by entering the first letter of each color."
-      @seq.each do |color|
-        user_color = gets.chomp
-        if color.first != user_color
-          @game_over = true
-          break
-        end
+  def require_sequence
+    puts "Repeat by entering the first letter of each color."
+    @seq.each do |color|
+      user_color = gets.chomp
+      if color.first != user_color
+        @game_over = true
+        break
       end
     end
+  end
 
   def add_random_color
     @seq << COLORS.shuffle[0]
