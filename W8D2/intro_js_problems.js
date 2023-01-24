@@ -6,6 +6,18 @@ const isSubstring = function (phrase, subphrase) {
   return phrase.includes(subphrase);
 };
 
+const fizzBuzz = function (arr) {
+  let res = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (i % 3 === 0 && i % 5 !== 0) {
+      res.push(i);
+    } else if (i % 5 === 0 && i % 3 !== 0) {
+      res.push(i);
+    }
+  }
+  return res;
+};
 const isPrime = function (n) {
   if (n < 2) return false;
 
