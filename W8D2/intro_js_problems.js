@@ -1,12 +1,9 @@
-const madLib = function (verb, adj, noun) {
-  return `We shall ${verb.toUpperCase()} the ${adj.toUpperCase()} ${noun.toUpperCase()}.`;
-};
+const madLib = (verb, adj, noun) =>
+  `We shall ${verb.toUpperCase()} the ${adj.toUpperCase()} ${noun.toUpperCase()}.`;
 
-const isSubstring = function (phrase, subphrase) {
-  return phrase.includes(subphrase);
-};
+const isSubstring = (phrase, subphrase) => phrase.includes(subphrase);
 
-const fizzBuzz = function (arr) {
+const fizzBuzz = (arr) => {
   let res = [];
 
   for (let i = 0; i < arr.length; i++) {
@@ -18,7 +15,8 @@ const fizzBuzz = function (arr) {
   }
   return res;
 };
-const isPrime = function (n) {
+
+const isPrime = (n) => {
   if (n < 2) return false;
 
   for (let i = 2; i <= Math.sqrt(n); i++) {
@@ -29,7 +27,7 @@ const isPrime = function (n) {
   return true;
 };
 
-const sumOfNPrimes = function (n) {
+const sumOfNPrimes = (n) => {
   let sum = 0;
   let count = 0;
   let i = 2;
